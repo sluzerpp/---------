@@ -1,0 +1,643 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;500;600&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  bottom: 0;
+  margin: 0;
+}
+
+button, input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  border: none;
+  outline: transparent;
+}
+
+html {
+  font-size: 0.625rem;
+}
+
+body {
+  background-color: #ddd;
+}
+
+:root {
+  --Vollkorn: "Vollkorn", sans-serif;
+  --Roboto: "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  padding: 0 4rem;
+  margin: 0 auto;
+}
+
+body.show-squad {
+  overflow: hidden;
+}
+body.show-squad .squad-mdl {
+  display: flex;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 1280px) {
+  html {
+    font-size: 0.575rem;
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 0.525rem;
+  }
+}
+@media (max-width: 800px) {
+  html {
+    font-size: 0.475rem;
+  }
+  .container {
+    padding: 0 2rem;
+  }
+}
+@media (max-width: 640px) {
+  html {
+    font-size: 0.45rem;
+  }
+}
+.header {
+  width: 100%;
+  padding: 1rem 0;
+  position: absolute;
+  top: 0;
+  height: -moz-min-content;
+  height: min-content;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3764705882);
+}
+
+.logo svg {
+  width: 23rem;
+}
+
+.nav {
+  display: flex;
+  min-height: 100%;
+}
+.nav__item {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  min-height: 100%;
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+}
+.nav__item img {
+  width: 50px;
+  height: 50px;
+  aspect-ratio: 1/1;
+}
+.nav__item:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  width: 100%;
+  padding: 2rem 0 3rem;
+  background-color: #333;
+}
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3764705882);
+}
+.footer__info {
+  font-size: 1.6rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  align-items: center;
+}
+
+@media (max-width: 740px) {
+  .header__inner {
+    flex-direction: column;
+    padding-bottom: 3rem;
+  }
+  .header .nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .footer__inner {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2.5rem;
+    gap: 1rem;
+  }
+}
+@media (max-width: 470px) {
+  .footer .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    text-align: center;
+  }
+}
+.intro {
+  padding: 15rem 0 4rem;
+  min-height: 70rem;
+  background-image: url("../imgs/intro-bg.webp");
+  background-position: 70%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.intro__content {
+  width: 65rem;
+  color: #fff;
+}
+.intro__title {
+  font-size: 4.4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+  font-family: var(--Vollkorn);
+}
+.intro__text {
+  font-size: 2.4rem;
+  letter-spacing: 0.1em;
+  line-height: 1.5em;
+}
+
+@media (max-width: 740px) {
+  .intro {
+    min-height: 60vh;
+  }
+  .intro__content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media (max-width: 470px) {
+  .intro {
+    padding-top: 30rem;
+  }
+}
+.search {
+  background-image: url("https://partizany.by/local/templates/html/images/noize.png");
+  padding: 3rem 0;
+}
+.search__inner {
+  display: grid;
+  gap: 2rem;
+}
+.search__title {
+  font-size: 2.4rem;
+  letter-spacing: 0.05em;
+  width: 100%;
+  text-align: center;
+}
+.search__bar {
+  padding: 2rem 3rem;
+  background-color: #fff;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 2.5rem;
+}
+.search__input {
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2509803922);
+  font-size: 2rem;
+}
+.search__select {
+  max-width: 150px;
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 0.5rem;
+}
+.search__btn {
+  background-color: #e41e1e;
+  padding: 2rem 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-transform: uppercase;
+  font-family: var(--Roboto);
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+.search__btn:hover {
+  background-color: #ec2e2e;
+}
+.search__btn:active {
+  background-color: #c71717;
+}
+.search__btn svg {
+  fill: #fff;
+  stroke: #fff;
+  width: 3rem;
+  height: 3rem;
+}
+.search__wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+}
+.search__wrapper.active {
+  max-height: 600px;
+}
+.search__found {
+  display: grid;
+  overflow: hidden;
+  gap: 2rem;
+  background-color: #fff;
+  padding: 3rem 0 2rem;
+}
+.search__found .search__title {
+  font-weight: bold;
+  margin: 0 2rem;
+  padding-bottom: 1rem;
+  width: auto;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2509803922);
+}
+.search__list {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.list__item {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem 4.5rem;
+  background-color: #fff;
+  background-image: url("https://partizany.by/local/templates/html/images/info-book.png");
+  background-size: 101% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item__img {
+  width: 20rem;
+  background-color: rgba(51, 51, 51, 0.2509803922);
+}
+.item__img img {
+  width: 100%;
+}
+.item__content {
+  padding: 2rem;
+}
+.item__name {
+  font-family: var(--Vollkorn);
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.item__name:hover {
+  text-decoration: none;
+}
+.item__infos {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.6rem;
+  font-family: var(--Roboto);
+  font-style: italic;
+}
+
+@media (max-width: 920px) {
+  .item__infos {
+    flex-wrap: wrap;
+  }
+  .item__img {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 780px) {
+  .search__bar {
+    grid-template-columns: auto 1fr;
+  }
+  .search__btn {
+    grid-column: 2/3;
+  }
+  .list__item {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  .item__name {
+    text-align: center;
+  }
+  .item__infos {
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media (max-width: 500px) {
+  .search__bar {
+    grid-template-columns: 1fr;
+  }
+  .search__select {
+    max-width: 100%;
+  }
+  .search__btn {
+    grid-column: auto;
+  }
+}
+.album {
+  padding: 2rem 0 5rem;
+  background-color: #786560;
+  background-image: url("https://partizany.by/local/templates/html/images/noize.png");
+}
+.album__inner {
+  padding: 3rem 0;
+  width: 100%;
+}
+.album__title {
+  font-family: var(--Vollkorn);
+  font-size: 3.4rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #fff;
+  margin-bottom: 3rem;
+}
+.album__content {
+  display: grid;
+  max-width: 100%;
+  overflow: hidden;
+  align-items: center;
+}
+.album__slider {
+  width: 100%;
+}
+
+.slider__controls {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  align-items: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  font-size: 0;
+  width: 4rem;
+  height: 4rem;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.7333333333);
+  z-index: 100;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: auto;
+  bottom: auto;
+  margin-top: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  color: rgba(255, 255, 255, 0.7333333333);
+  font-size: 2rem;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #e41e1e;
+  border-color: #e41e1e;
+  transition: background 0.2s ease, border 0.2s ease;
+}
+
+.swiper-pagination {
+  width: -moz-min-content;
+  width: min-content;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.swiper-slide a {
+  width: 100%;
+  display: inline-flex;
+  min-height: 30rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-size: 2rem;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px #333, -2px 2px 4px #333, 2px -2px 4px #333, -2px -2px 4px #333;
+  padding: 1rem;
+  align-items: flex-end;
+  text-align: left;
+}
+.swiper-slide a:hover {
+  text-decoration: underline;
+}
+
+.squads {
+  background-image: url("https://partizany.by/local/templates/html/images/noize.png");
+  padding: 2rem 0 5rem;
+}
+.squads .search__title {
+  font-weight: bold;
+  padding-bottom: 1rem;
+  width: auto;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2509803922);
+  margin-bottom: 2rem;
+}
+.squads__inner {
+  background-color: #fff;
+  padding: 3rem 2rem;
+  width: 100%;
+}
+.squads__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+  text-align: center;
+  gap: 20px;
+}
+.squads__item button {
+  text-decoration: underline;
+  font-size: 2rem;
+  font-family: var(--Roboto);
+  color: #333;
+  cursor: pointer;
+}
+.squads__item button:hover {
+  text-decoration: none;
+}
+
+.squad-mdl {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background-color: rgba(51, 51, 51, 0.3764705882);
+  color: #333;
+}
+.squad-mdl .container {
+  background-image: url("https://partizany.by/local/templates/html/images/noize.png");
+  padding: 2rem;
+  margin: 2rem;
+  background-color: #ddd;
+}
+.squad-mdl__content {
+  background-color: #fff;
+  width: 100%;
+  padding: 3rem;
+  position: relative;
+}
+.squad-mdl__title {
+  width: 90%;
+  margin: 0 auto 1rem;
+  font-family: var(--Vollkorn);
+  font-size: 3.2rem;
+  text-align: center;
+}
+.squad-mdl__title-small {
+  font-family: var(--Vollkorn);
+  font-size: 2.4rem;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto 1.5rem;
+}
+.squad-mdl__close {
+  font-size: 2rem;
+  position: absolute;
+  right: 3rem;
+  top: 2rem;
+  padding: 1rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+  color: #333;
+  font-weight: bold;
+  border: 2px solid #e41e1e;
+  cursor: pointer;
+}
+.squad-mdl__close:hover {
+  background-color: #e41e1e;
+  color: #fff;
+}
+.squad-mdl__articles, .squad-mdl__people {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  font-size: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+}
+.squad-mdl__articles a, .squad-mdl__people a {
+  color: #333;
+  font-family: var(--Roboto);
+  margin: 0 auto;
+}
+.squad-mdl__articles a:hover, .squad-mdl__people a:hover {
+  text-decoration: none;
+}
+.squad-mdl__articles a::first-letter, .squad-mdl__people a::first-letter {
+  text-transform: uppercase;
+}
+
+.articles {
+  width: 100%;
+  padding: 2rem 0 3rem;
+  background-image: url("https://partizany.by/local/templates/html/images/noize.png");
+}
+.articles__title {
+  font-size: 3.4rem;
+  font-family: var(--Vollkorn);
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+.articles__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+.articles__column {
+  display: grid;
+  grid-template-rows: 0.6fr 1fr;
+  width: 100%;
+  min-height: 80rem;
+  gap: 1.5rem;
+}
+.articles__column--reverse {
+  grid-template-rows: 1fr 0.6fr;
+}
+.articles__column:last-child .articles__item {
+  grid-row: 1/3;
+}
+.articles__item {
+  background-color: #333;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.articles__item h3 {
+  font-size: 2.4rem;
+  color: #fff;
+  font-family: var(--Vollkorn);
+  text-shadow: 2px 2px 4px #333, -2px 2px 4px #333, 2px -2px 4px #333, -2px -2px 4px #333;
+}
+.articles__item:hover {
+  text-decoration: underline;
+}

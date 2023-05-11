@@ -1,0 +1,107 @@
+body {
+  padding: 15rem 0 5rem;
+  background-color: #786560;
+  background-image: url("https://partizany.by/local/templates/html/images/noize.png");
+}
+body .nav {
+  display: flex !important;
+}
+body .header__inner {
+  flex-direction: row !important;
+}
+
+.detailed {
+  background-image: url("https://partizany.by/local/templates/html/images/info-book.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  min-height: 40rem;
+  height: 100%;
+  padding: 3.5rem 5.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10rem;
+}
+.detailed__photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.detailed__photo img {
+  height: 100%;
+  max-height: 30rem;
+}
+.detailed__name {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: var(--Vollkorn);
+  letter-spacing: 0.1em;
+}
+.detailed__info {
+  font-family: var(--Roboto);
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+.detailed__list {
+  margin-bottom: 1.5rem;
+}
+.detailed__rewards-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  font-family: var(--Vollkorn);
+  letter-spacing: 0.1em;
+}
+.detailed__slider {
+  overflow: hidden;
+  height: 100%;
+}
+.detailed__slider .swiper-pagination {
+  color: #333;
+}
+.detailed__slider .swiper-button-next,
+.detailed__slider .swiper-button-prev {
+  border-color: #333;
+}
+.detailed__slider .swiper-button-next::after,
+.detailed__slider .swiper-button-prev::after {
+  color: #333;
+}
+.detailed__swiper {
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.swiper-slide {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.swiper-slide img {
+  width: auto;
+  height: 100%;
+  max-height: 60rem;
+}
+
+@media (max-width: 950px) {
+  .detailed {
+    grid-template-columns: 1fr;
+    padding: 10rem 5rem;
+    gap: 3rem;
+  }
+}
+@media (max-width: 450px) {
+  .detailed__photo img {
+    height: auto;
+    max-height: 100%;
+    width: 100%;
+  }
+  .detailed .swiper-slide img {
+    max-height: 45rem;
+  }
+}
